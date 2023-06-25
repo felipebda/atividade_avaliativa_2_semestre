@@ -72,48 +72,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualizar Cadastro</title>
+    <style>
+        body {
+            background-color: #DDA0DD;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #CCCCCC;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"], button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        input[type="submit"]:hover, button:hover {
+            background-color: #45a049;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+        #del:hover{
+            background-color: red;
+        }        
+    </style>
 </head>
 
 <body>
-    <div>
-        <h2>Complete seu Cadastro</h2>
-        <form action="TelaMeuPerfil.php" method="POST">
-            <label for="cpf">CPF</label>
-            <input type="text" id="cpf" name="cpf" value = "<?php echo $cpf; ?>">
-            <br>
-            <label for="data">Data de Nascimento</label>
-            <input type="text" id="data" name="data_nascimento" value = "<?php echo $data_nascimento; ?>">
-            <br>
-            <label for="sexo">Sexo</label>
-            <input type="text" is="sexo" name="sexo" value = "<?php echo $sexo; ?>">
-            <br>
-            <label for="cidade">Cidade</label>
-            <input type="text" id="cidade" name="cidade" value = "<?php echo $cidade; ?>">
-            <br>
-            <label for="endereco">Endereco</label>
-            <input type="text" id="endereco" name="endereco" value = "<?php echo $endereco; ?>">
-            <br>
-            <label for="complemento">Complemento</label>
-            <input type="text" id="complemento" name="complemento" value = "<?php echo $complemento; ?>">
-            <br>
-            <input type="hidden" name="id_usuario" value="<?php echo $id; ?>">
-            <input type="hidden" name="tipo_query" value="atualizar">
-            <input type="submit" value="Salvar">
-            <br>
-        </form>
-    </div>
+    <div class="container">
+        <div>       
+            <h2>Complete seu Cadastro</h2>
+            <form action="TelaMeuPerfil.php" method="POST">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" name="cpf" value = "<?php echo $cpf; ?>">
+                <br>
+                <label for="data">Data de Nascimento</label>
+                <input type="text" id="data" name="data_nascimento" value = "<?php echo $data_nascimento; ?>">
+                <br>
+                <label for="sexo">Sexo</label>
+                <input type="text" is="sexo" name="sexo" value = "<?php echo $sexo; ?>">
+                <br>
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" name="cidade" value = "<?php echo $cidade; ?>">
+                <br>
+                <label for="endereco">Endereco</label>
+                <input type="text" id="endereco" name="endereco" value = "<?php echo $endereco; ?>">
+                <br>
+                <label for="complemento">Complemento</label>
+                <input type="text" id="complemento" name="complemento" value = "<?php echo $complemento; ?>">
+                <br>
+                <input type="hidden" name="id_usuario" value="<?php echo $id; ?>">
+                <input type="hidden" name="tipo_query" value="atualizar">
+                <input type="submit" value="Salvar">
+                <br>
+        
+            </form>
+        </div>
+    
 
-    <div>
-        <button>FAQS</button>
-        <button>Contate-nos</button>
-        <button>Suporte</button>
-        <a href="TelaLogin.php"><button>Sair do perfil</button></a>
-        <form action="TelaLogin.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $id; ?>">
-            <input type="hidden" name="tipo_query" value ="deletar">
-            <input type="submit" value="Deletar Perfil">
-        </form>
+        <div class="button-container">
+            <button>FAQS</button>
+            <button>Contate-nos</button>
+            <button>Suporte</button>
+            <a href="TelaLogin.php"><button>Sair do perfil</button></a>
+            <form action="TelaLogin.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
+                <input type="hidden" name="tipo_query" value ="deletar">
+                <input id="del" type="submit" value="Deletar Perfil">
+            </form>
 
+        </div>
     </div>
 </body>
 </html>

@@ -144,30 +144,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela Meu Perfil</title>
+    <style>
+            body {
+            background-color: #DDA0DD;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333333;
+        }
+
+        label {
+            display: block;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"], button {
+            color: white;
+            background-color: #6495ED;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover, button:hover {
+            background-color: #4169E1;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Meu Perfil</h1>
-    <h2><?php if(isset($_COOKIE["idteste"]) || isset($_POST["tipo_query"]))echo "Bem vindo, ".$nome."!"; ?></h2>
-    <br>
+    <div class="container">
+        <h1>Meu Perfil</h1>
+        <h2><?php if(isset($_COOKIE["idteste"]) || isset($_POST["tipo_query"]))echo "Bem vindo, ".$nome."!"; ?></h2>
+        <br>
 
-    <h2>Dados Cadastrais</h2>
-    <p>Nome Completo: <?php echo $nome; ?></p>
-    <p>E-mail: <?php echo $email; ?></p>
-    <p>CPF: <?php echo $cpf ?></p>
-    <p>Sexo: <?php echo $sexo; ?></p>
-    <p>Data de Nascimento: <?php echo $data_nascimento ?></p>
-    <p>Cidade: <?php echo $cidade ?></p>
-    <p>Endereco: <?php echo $endereco ?></p>
-    <p>Complemento: <?php echo $complemento ?></p>
-    <br><br>
-    
-    <a href=""><button>Meus Pets</button></a>
-    
-    <form action="TelaGerenciarCadastro.php" method="post">
-        <input type="hidden" name="id_utilizado" value="<?php echo $id; ?>">
-        <input type="submit" value="Gerenciar Cadastro">
-    </form>
+        <div clas="box">
+            <h2>Dados Cadastrais</h2>
+            <p>Nome Completo: <?php echo $nome; ?></p>
+            <p>E-mail: <?php echo $email; ?></p>
+            <p>CPF: <?php echo $cpf ?></p>
+            <p>Sexo: <?php echo $sexo; ?></p>
+            <p>Data de Nascimento: <?php echo $data_nascimento ?></p>
+            <p>Cidade: <?php echo $cidade ?></p>
+            <p>Endereco: <?php echo $endereco ?></p>
+            <p>Complemento: <?php echo $complemento ?></p>
+        </div>
+        <br><br>
+        
+        <a href=""><button>Meus Pets</button></a>
+        
+        <form action="TelaGerenciarCadastro.php" method="post">
+            <input type="hidden" name="id_utilizado" value="<?php echo $id; ?>">
+            <input type="submit" value="Gerenciar Cadastro">
+        </form>
+    </div>
+
 
 </body>
 </html>
