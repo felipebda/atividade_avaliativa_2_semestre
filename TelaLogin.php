@@ -6,14 +6,14 @@
         }
         catch(PDOException $e)
         {
-            echo "Erro ao conectar com banco de dados: ".$e.getMessage();
+            echo "Erro ao conectar com banco de dados: ".$e->getMessage();
         }
 
         //CONFIRMAR A EXCLUSAO DA CONTA VINDO DA PAGINA TelaGerenciarCadastro
 
         if(isset($_POST["tipo_query"]))
         {
-            if($_POST["tipo_query"] == "Deletar Perfil")
+            if($_POST["tipo_query"] == "deletar")
             {           
             $id = intval($_POST["id"]);
             $query5 = $pdo->prepare("DELETE FROM usuario WHERE id_usuario = $id");

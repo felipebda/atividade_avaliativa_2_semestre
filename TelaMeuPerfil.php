@@ -18,7 +18,7 @@
         }
         catch(PDOException $e)
         {
-            echo "Erro ao conectar com banco de dados: ".$e.getMessage();
+            echo "Erro ao conectar com banco de dados: ".$e->getMessage();
         }
 
         //TENTANDO FAZER CONEXAO VIA COOKIE

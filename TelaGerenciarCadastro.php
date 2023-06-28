@@ -18,7 +18,7 @@
         }
         catch(PDOException $e)
         {
-            echo "Erro ao conectar com banco de dados: ".$e.getMessage();
+            echo "Erro ao conectar com banco de dados: ".$e->getMessage();
         }
 
         //# 4 Pegar dados para atualizar cadastro
@@ -174,7 +174,7 @@
             <form action="TelaLogin.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <input type="hidden" name="tipo_query" value ="deletar">
-                <input id="del" type="submit" value="Deletar Perfil">
+                <input id="del" type="submit" value="Deletar">
             </form>
 
         </div>
